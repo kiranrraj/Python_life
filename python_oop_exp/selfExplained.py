@@ -1,4 +1,5 @@
 class Dog:
+    """A simple oop example"""
     legs = 4
     run = True
 
@@ -8,23 +9,23 @@ class Dog:
         self.color = color
     
     def printDetails(self):
-        print(f"Name : {self.name} - Age : {self.age} - Color : {self.color} - Legs = {Dog.legs} ")
+        print(f"Name : {self.name} - Age : {self.age} - Color : {self.color} - Legs = {self.legs} ")
 
     def speak(self):
         print("Bow bow")
+        
 
 tiger = Dog("Tiger", 4, "black")
-tiger.printDetails()
-# Name : Tiger - Age : 4 - Color : black - Legs = 4 
+tiger.printDetails() # Name : Tiger - Age : 4 - Color : black - Legs = 4 
 
 Dog.printDetails(tiger) # Here self get value tiger
 # Name : Tiger - Age : 4 - Color : black - Legs = 4 
 
 kaiser = Dog("Kaiser", 5, "Brown") #__init__(kaiser, "kaiser", 5, "Brown")
-Dog.printDetails(kaiser)
-# Name : Kaiser - Age : 5 - Color : Brown - Legs = 4
+Dog.printDetails(kaiser) # Name : Kaiser - Age : 5 - Color : Brown - Legs = 4
 
 #SAME LOCATION FOR CLASS VARIABLE
+
 # print(id(tiger.legs))   #140725336479488
 # print(id(kaiser.legs))  #140725336479488
 # print(id(Dog.legs))     #140725336479488
@@ -40,10 +41,24 @@ Dog.printDetails(kaiser)
 
 Dog.legs = 2
 
-tiger.printDetails()
-kaiser.printDetails()
-# Name : Tiger - Age : 4 - Color : black - Legs = 2
-# Name : Kaiser - Age : 5 - Color : Brown - Legs = 2
+tiger.printDetails() # Name : Tiger - Age : 4 - Color : black - Legs = 2
+kaiser.printDetails() # Name : Kaiser - Age : 5 - Color : Brown - Legs = 2
 
-Dog.speak(tiger)
-#Bow bow
+tiger.legs = 3 
+tiger.printDetails() # Name : Tiger - Age : 4 - Color : black - Legs = 3
+kaiser.printDetails() # Name : Kaiser - Age : 5 - Color : Brown - Legs = 2
+
+Dog.speak(tiger) #Bow bow
+
+print(kaiser.__dict__)  #{'name': 'Kaiser', 'age': 5, 'color': 'Brown'}
+print(Dog.__dict__)  
+#'__module__': '__main__', 
+#'__doc__': 'A simple oop example',
+# 'legs': 2, 
+# 'run': True, 
+# '__init__': <function 
+# Dog.__init__ at 0x0000019B944CA310>, 
+# 'printDetails': <function Dog.printDetails at 0x0000019B944CA3A0>, 
+# 'speak': <function Dog.speak at 0x0000019B944CA430>, 
+# '__dict__': <attribute '__dict__' of 'Dog' objects>, 
+# '__weakref__': <attribute '__weakref__' of 'Dog' objects>}
