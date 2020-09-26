@@ -1,2 +1,2 @@
 # Python_life
-This is where i learn to program in python.
+Basic python examples... will update with advance topic related examples
