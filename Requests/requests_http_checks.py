@@ -2,6 +2,7 @@ import requests
 
 r = requests.get('http://httpbin.org/get')
 jsonOut = r.json()
+
 print("---------------------------------------")
 print(f"URL : {r.url}")
 print(f"Arguments passed to the url :{jsonOut['args']}")
@@ -10,6 +11,7 @@ print("---------------------------------------")
 payload = {'fname':'kiran', "lname":"raj"}
 r = requests.get('http://httpbin.org/get', params=payload)
 getRes = r.json()
+
 print(f"URL : {r.url}")
 print(f"Arguments passed to the url :{getRes['args']}")
 print("---------------------------------------")
@@ -17,6 +19,7 @@ print("---------------------------------------")
 payload = {'fname':'kiran', "lname":"raj"}
 r = requests.post('http://httpbin.org/post', data=payload)
 postRes = r.json()
+
 print(f"URL : {r.url}")
 print(f"Date from header : {r.headers['Date']}")
 print(f"Content type from header : {r.headers['Content-Type']}")
@@ -27,6 +30,7 @@ print("---------------------------------------")
 payload = {'fname':'kiran', "lname":"raj", "initials":"r"}
 r = requests.post('http://httpbin.org/post', data=payload)
 postRes = r.json()
+
 print(f"URL : {r.url}")
 print(f"Date from header : {r.headers['Date']}")
 print(f"Content type from header : {r.headers['Content-Type']}")
